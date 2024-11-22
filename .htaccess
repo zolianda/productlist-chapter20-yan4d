@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # Jika file yang diminta tidak ada
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # Jika direktori yang diminta tidak ada
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Arahkan semua permintaan ke index.html
+  RewriteRule . /index.html [L]
+</IfModule>
